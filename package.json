@@ -1,0 +1,78 @@
+{
+  "name": "dsh-sophiasearch",
+  "version": "2.9.0",
+  "description": "Sophia's unified web search provider for DeepSeek Harness (ctx.web): 12 backends — Exa + Parallel + DDG + SearXNG (keyless), DeepSeek + Anthropic + OpenAI + Brave + Tavily + Serper + Firecrawl + Mojeek (key-gated via Settings credentials). Registers provider id \"unified\" for zero-config web_search. 统一网页搜索聚合：12 后端并发扇出、去重合并。Fork of @240xu/dsh-websearch (unmaintained), maintained by AEmbers.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./client": "./lib/client.js"
+  },
+  "files": [
+    "lib",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "brave",
+    "claude",
+    "codex",
+    "cordis",
+    "deepseek-harness",
+    "dsh",
+    "exa",
+    "firecrawl",
+    "mcp",
+    "mojeek",
+    "parallel",
+    "plugin",
+    "searxng",
+    "serper",
+    "sophiasearch",
+    "tavily",
+    "web-search"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "AEmbers"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AEmbers/dsh-sophiasearch.git"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-web": "*",
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/schemastery": "*",
+    "@deepseek-ai/dsh-credentials": "*",
+    "@deepseek-ai/dsh-settings": "*",
+    "@deepseek-ai/dsh-launch-environment": "*"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=20.3"
+  },
+  "homepage": "https://github.com/AEmbers/dsh-sophiasearch#readme",
+  "bugs": {
+    "url": "https://github.com/AEmbers/dsh-sophiasearch/issues"
+  }
+}
